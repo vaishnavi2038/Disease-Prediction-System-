@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../static/style.css" />
+  <link media="screen and (max-width: 854px)" rel="stylesheet" href="../static/phone.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet" />
   <title>Disease Prediction System</title>
@@ -53,7 +54,8 @@
     <form action="getPredictions" id="predict" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
 
-      <input list="symptoms" name="symptom_one" autocomplete="on" placeholder="please select a symptom" multiple />
+      <input list="symptoms" required name="symptom_one" autocomplete="on" placeholder="please select a symptom"
+        multiple />
       <datalist id="symptoms">
         <option value="itching">itching</option>
         <option value="skin_rash">skin_rash</option>
@@ -188,7 +190,8 @@
         <option value="yellow_crust_ooze">yellow_crust_ooze</option>
         <option value="prognosis">prognosis</option>
       </datalist>
-      <input list="symptoms" name="symptom_two" autocomplete="on" placeholder="please select a symptom" multiple />
+      <input list="symptoms" required name="symptom_two" autocomplete="on" placeholder="please select a symptom"
+        multiple />
       <datalist id="symptoms">
         <option value="itching">itching</option>
         <option value="skin_rash">skin_rash</option>
@@ -323,7 +326,8 @@
         <option value="yellow_crust_ooze">yellow_crust_ooze</option>
         <option value="prognosis">prognosis</option>
       </datalist>
-      <input list="symptoms" name="symptom_three" autocomplete="on" placeholder="please select a symptom" multiple />
+      <input list="symptoms" required name="symptom_three" autocomplete="on" placeholder="please select a symptom"
+        multiple />
       <datalist id="symptoms">
         <option value="itching">itching</option>
         <option value="skin_rash">skin_rash</option>
@@ -458,7 +462,8 @@
         <option value="yellow_crust_ooze">yellow_crust_ooze</option>
         <option value="prognosis">prognosis</option>
       </datalist>
-      <input list="symptoms" name="symptom_four" autocomplete="on" placeholder="please select a symptom" multiple />
+      <input list="symptoms" required name="symptom_four" autocomplete="on" placeholder="please select a symptom"
+        multiple />
       <datalist id="symptoms">
         <option value="itching">itching</option>
         <option value="skin_rash">skin_rash</option>
@@ -1039,7 +1044,7 @@
       </div>
     </div>
     <h3>Our Guide</h3>
-    <div class="container">
+    <div class="container" id="phn">
       <div class="box" id="mid-box">
         <p>Prof. Nilima Zade</p>
         <p>HOD Electronics</p>

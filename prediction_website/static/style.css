@@ -185,7 +185,7 @@ input[type="submit"]:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 430px;
+  height: 537px;
   color: white;
 }
 
@@ -194,18 +194,18 @@ input[type="submit"]:hover {
   position: absolute;
   background: url("imgs/covid.jpg") no-repeat center center/cover;
   width: 100%;
-  height: 79%;
+  height: 90%;
   z-index: -1;
   opacity: 0.9;
 }
 
-#covid-section form .ip{
+#covid-section form .ip {
   display: flex;
   flex-direction: column;
   margin: 4px;
 }
 
-#covid-section form .ip input[list]{
+#covid-section form .ip input[list] {
   padding: 5px;
   width: 40rem;
   border-radius: 34px;
@@ -276,4 +276,26 @@ footer {
   background-color: skyblue;
   color: white;
   padding: 10px;
+}
+
+#predict-result,
+#covid-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  color: white;
+}
+
+#predict-result::before,
+#covid-result::before {
+  content: "";
+  background: url("imgs/result.jpg") no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.9;
 }
