@@ -23,5 +23,4 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('getPredictions', views.getPredictions, name='getPredictions'),
     path('covidPredict', views.covidPredict, name='covidPredict'),
-    path('result/', views.result, name='result')
 ]

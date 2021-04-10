@@ -886,7 +886,7 @@
     <h2>COVID-19 checkup</h2>
     <form action="covidPredict" id="covid-form" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-      <div class="ip">
+      <!-- <div class="ip">
         <input list="symptoms-covid" name="symptom_1" autocomplete="on" placeholder="please select a symptom" required
           multiple />
         <datalist id="symptoms-covid">
@@ -980,6 +980,55 @@
           <option value="Fatigue">Fatigue</option>
           <option value="Gastrointestinal">Gastrointestinal</option>
         </datalist>
+      </div> -->
+      <div class="ip">
+        <p>
+          Breathing Problem: Yes
+          <input type="radio" name="Breathing Problem" id="" value="1" /> No
+          <input type="radio" name="Breathing Problem" id="" value="0" />
+        </p>
+      </div>
+      <div class="ip">
+        <p>
+          Fever: Yes
+          <input type="radio" name="Fever" id="" value="1" /> No
+          <input type="radio" name="Fever" id="" value="0" />
+        </p>
+      </div>
+      <div class="ip">
+        <p>
+          Dry Cough: Yes
+          <input type="radio" name="Dry Cough" id="" value="1" /> No
+          <input type="radio" name="Dry Cough" id="" value="0" />
+        </p>
+      </div>
+      <div class="ip">
+        <p>
+          Sore Throat: Yes
+          <input type="radio" name="Sore Throat" id="" value="1" /> No
+          <input type="radio" name="Sore Throat" id="" value="0" />
+        </p>
+      </div>
+      <div class="ip">
+        <p>
+          Asthma: Yes
+          <input type="radio" name="Asthma" id="" value="1" /> No
+          <input type="radio" name="Asthma" id="" value="0" />
+        </p>
+      </div>
+      <div class="ip">
+        <p>
+          Chronic Lung Disease: Yes
+          <input type="radio" name="Chronic Lung Disease" id="" value="1" /> No
+          <input type="radio" name="Chronic Lung Disease" id="" value="0" />
+        </p>
+      </div>
+      <div class="ip">
+        <p>
+          Hyper Tension: Yes
+          <input type="radio" name="Hyper Tension" id="" value="1" /> No
+          <input type="radio" name="Hyper Tension" id="" value="0" />
+        </p>
       </div>
       <div class="ip">
         <p>
