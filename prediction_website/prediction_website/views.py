@@ -13,14 +13,18 @@ def getPredictions(request):
         d = request.POST.get('symptom_four')
         e = request.POST.get('symptom_five')
         f = request.POST.get('symptom_six')
-        predict_input = [a,b,c,d,e,f,0,0,0,0,0,0,0,0,0,0,0]
+        # predict_input = [a,b,c,d,e,f,0,0,0,0,0,0,0,0,0,0,0]
         print(predict_input)
+        
+        # import pickle
+        # model = pickle.load(open('../disease_predict_system.pkl', 'rb'))
+        # # scaled = pickle.load(open())
+        # prediction = model.predict(predict_input)
+        # print(prediction)
+        
     return render(request, 'predict.html', {'a':'helloooooooooooo'})
 
-    # import pickle
-    # model = pickle.load(open())
-    # scaled = pickle.load(open())
-    # prediction = model.predict()
+    
 
 def covidPredict(request):
     if request.method=='POST':
@@ -34,7 +38,7 @@ def covidPredict(request):
         h = request.POST.get('Attended Large Gathering')
         i = request.POST.get('Visited Public Exposed Places')
         j = request.POST.get('Family working in Public Exposed Places')
-        covid_input = [a,b,c,d,e,f,g,h,i,j]
+        # covid_input = [a,b,c,d,e,f,g,h,i,j]
         print(covid_input)
     return render(request, 'covid.html', {'b':'covid'})
         
