@@ -22,13 +22,13 @@ nav {
 nav::before {
   content: "";
   position: absolute;
-  background: skyblue no-repeat center center/cover;
+  background: rgb(20, 142, 190) no-repeat center center/cover;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 nav #logo {
@@ -45,11 +45,13 @@ nav #logo {
 #navbar ul a {
   text-decoration: none;
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 34px;
   color: white;
 }
 #navbar ul a:hover {
-  color: skyblue;
+  color: rgb(20, 142, 190);
+  background-color: white;
 }
 
 #home-section {
@@ -82,7 +84,7 @@ nav #logo {
   margin: 10px;
   border: none;
   border-radius: 34px;
-  background-color: skyblue;
+  background-color: rgb(20, 142, 190);
 }
 
 #home-section button a {
@@ -91,7 +93,7 @@ nav #logo {
   font-size: 22px;
 }
 #home-section button a:hover {
-  color: skyblue;
+  color: rgb(20, 142, 190);
 }
 
 #home-section button:hover {
@@ -161,22 +163,22 @@ datalist {
   padding: 5px;
   width: 40rem;
   border-radius: 34px;
-  border: skyblue solid 1px;
+  border: rgb(20, 142, 190) solid 1px;
   margin: 4px;
 }
 
 input[type="submit"] {
-  background-color: skyblue;
+  background-color: rgb(20, 142, 190);
   color: white;
   border: none;
   border-radius: 34px;
   padding: 8px 20px;
   margin: 5px;
   width: 100%;
+  font-size: 1.2rem;
 }
 input[type="submit"]:hover {
-  background-color: white;
-  color: skyblue;
+  background-color: skyblue;
   cursor: pointer;
 }
 
@@ -185,7 +187,7 @@ input[type="submit"]:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 537px;
+  height: 700px;
   color: white;
 }
 
@@ -194,22 +196,20 @@ input[type="submit"]:hover {
   position: absolute;
   background: url("imgs/covid.jpg") no-repeat center center/cover;
   width: 100%;
-  height: 90%;
+  height: 115%;
   z-index: -1;
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 #covid-section form .ip {
   display: flex;
   flex-direction: column;
   margin: 4px;
+  background-color: rgb(2, 57, 78);
+  border: 1px black solid;
 }
 
-#covid-section form .ip input[list] {
-  padding: 5px;
-  width: 40rem;
-  border-radius: 34px;
-  border: skyblue solid 1px;
+#covid-section form .ip p {
   margin: 4px;
 }
 
@@ -266,14 +266,14 @@ textarea {
   padding: 5px;
   width: 40rem;
   border-radius: 34px;
-  border: skyblue solid 1px;
+  border: rgb(20, 142, 190) solid 1px;
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: skyblue;
+  background-color: rgb(20, 142, 190);
   color: white;
   padding: 10px;
 }
@@ -284,8 +284,13 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 500px;
-  color: white;
+  height: 90%;
+  width: 100%;
+  color: rgb(3, 72, 99);
+  margin: 15px;
+}
+#predict-result p {
+  margin: 0px 35px;
 }
 
 #predict-result::before,
@@ -294,8 +299,9 @@ footer {
   background: url("imgs/result.jpg") no-repeat center center/cover;
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.9;
+  opacity: 0.4;
 }
