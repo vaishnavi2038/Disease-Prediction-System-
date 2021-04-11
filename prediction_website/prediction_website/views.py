@@ -3,10 +3,10 @@ import pickle
 import numpy as np   
 
 # disease prediction model loading file
-model=pickle.load(open("prediction_website/disease_predict_system.pkl","rb")) #relative path
-
-# model=pickle.load(open("C:/Users/Lenovo/Documents/Disease prediction system/prediction_website/models/disease_predict_system.pkl","rb"))
-# model=pickle.load(open("C:/Users/admin/Desktop/be project/Disease-Prediction-System-/prediction_website/models/disease_predict_system.pkl","rb"))
+#model=pickle.load(open("disease_predict_system.pkl","rb")) #relative path
+model=pickle.load(open("C:/Users/Lenovo/Documents/Disease prediction system/prediction_website/models/disease_predict_system.pkl","rb"))
+#model=pickle.load(open("C:/Users/admin/Desktop/be project/Disease-Prediction-System-/prediction_website/models/disease_predict_system.pkl","rb"))
+model1=pickle.load(open("C:/Users/Lenovo/Documents/Disease prediction system/prediction_website/models/covid_prediction_system.pkl","rb"))
 
 def home(request):
     return render(request, 'index.html')
@@ -91,7 +91,10 @@ def getPredictions(request):
         desc,prec=desc_prec(number)
         print(desc)
         print(prec)
-        context={"disease":y,"description":desc,"precaution":prec}
+        desc1=str(desc[0])
+        prec1=str(prec[0])
+        y1=str(y[0])
+        context={"disease":y1,"description":desc1,"precaution":prec1}
         print(context)      
     return render(request, 'predict.html', context)
 
@@ -110,5 +113,22 @@ def covidPredict(request):
         k = request.POST.get('Visited Public Exposed Places')
         l = request.POST.get('Family working in Public Exposed Places')
         covid_input = [a,b,c,d,e,f,g,h,i,j,k,l]
+        for i in range(0, len(covid_input)):
+            covid_input[i] = int(covid_input[i])
         print(covid_input)
+
+        #predicting the covid output
+        covid_pred=model1.predict([covid_input])
+        print(covid_pred)
+        covid=[]
+        for z in covid_pred:
+            if z==1:
+                covid="you have covid"         # add a message 
+            else:
+                covid="you don't have covid"   # add a message 
+        print(covid)
+        
+
+
+        context={"covid predicted":covid}
     return render(request, 'covid.html', context)
