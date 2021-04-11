@@ -3,7 +3,7 @@ import pickle
 import numpy as np   
 
 # disease prediction model loading file
-model=pickle.load(open("prediction_website/disease_predict_system.pkl","rb")) #relative path
+# model=pickle.load(open("prediction_website/disease_predict_system.pkl","rb")) #relative path
 
 # model=pickle.load(open("C:/Users/Lenovo/Documents/Disease prediction system/prediction_website/models/disease_predict_system.pkl","rb"))
 # model=pickle.load(open("C:/Users/admin/Desktop/be project/Disease-Prediction-System-/prediction_website/models/disease_predict_system.pkl","rb"))
