@@ -1,14 +1,17 @@
 from django.shortcuts import render
 import pickle
 import numpy as np   
+import joblib
 
 # disease prediction model loading file
 #model=pickle.load(open("disease_predict_system.pkl","rb")) #relative path
 #model=pickle.load(open("C:/Users/admin/Desktop/be project/Disease-Prediction-System-/prediction_website/models/disease_predict_system.pkl","rb"))
 #model1=pickle.load(open("C:/Users/admin/Desktop/be project/Disease-Prediction-System-/prediction_website/models/covid_prediction_system.pkl","rb"))
+model=joblib.load("disease_prediction_system.joblib","rb")
+model1=joblib.load("covid_19_analysis.joblib","rb")
 
-# model=pickle.load(open("C:/Users/Lenovo/Documents/Disease prediction system/prediction_website/models/disease_predict_system.pkl","rb"))
-# model1=pickle.load(open("C:/Users/Lenovo/Documents/Disease prediction system/prediction_website/models/covid_prediction_system.pkl","rb"))
+#model=pickle.load(open("C:/Users/Lenovo/Documents/Disease prediction system/prediction_website/models/disease_predict_system.pkl","rb"))
+#model1=pickle.load(open("C:/Users/Lenovo/Documents/Disease prediction system/prediction_website/models/covid_prediction_system.pkl","rb"))
 
 def home(request):
     return render(request, 'index.html')
@@ -130,5 +133,5 @@ def covidPredict(request):
                 covid="you don't have covid"   # add a message 
         print(covid)
 
-        context={"covid predicted":covid}
+        context={"covid_predicted":covid}
     return render(request, 'covid.html', context)
