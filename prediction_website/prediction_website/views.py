@@ -1,15 +1,16 @@
 from django.shortcuts import render
 import pickle
 import numpy as np
-from django.core.mail import send_mail   
+from django.core.mail import send_mail  
 
-# disease prediction model loading file
-#model=pickle.load(open("disease_predict_system.pkl","rb")) #relative path
-#model=pickle.load(open("C:/Users/bahar/Documents/GitHub/Disease-Prediction-System-/prediction_website/models/disease_predict_system.pkl","rb"))
+
+model=pickle.load(open("./models/disease_predict_system.pkl","rb")) #relative path
+
+model1=pickle.load(open("./models/covid_prediction_system.pkl","rb"))
+
+
+#model=pickle.load(open("C:/Users/bahar/Documents/Github/Disease-Prediction-System-/prediction_website/models/disease_predict_system.pkl","rb"))
 #model1=pickle.load(open("C:/Users/bahar/Documents/GitHub/Disease-Prediction-System-/prediction_website/models/covid_prediction_system.pkl","rb"))
-
-model=pickle.load(open("C:/Users/bahar/Documents/Github/Disease-Prediction-System-/prediction_website/models/disease_predict_system.pkl","rb"))
-model1=pickle.load(open("C:/Users/bahar/Documents/GitHub/Disease-Prediction-System-/prediction_website/models/covid_prediction_system.pkl","rb"))
 
 def home(request):
     return render(request, 'index.html')
